@@ -1,0 +1,29 @@
+.head-form{
+    border: #0D0D0D dotted 1px;
+}
+textarea{
+    padding-bottom: 70px;
+}
+.click-infor{
+    text-align: center;
+}
+tr td:first-child{
+    text-align: left;
+}
+tr th{
+    background-color: #E6E6E6;
+}
+.tb-bg{
+    background-color: #E6E6E6;
+}
+table{
+    border: black solid 1px;
+    width: 100%;
+}
+.submit{
+    margin-top: 10px;
+    margin-bottom: 200px;
+}
+.tdd:hover{
+    background-color: #FFFDA9;
+}
