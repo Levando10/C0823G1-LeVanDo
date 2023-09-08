@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .R-drink{
+            font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+          width: 40%;
+            padding-left: 6%;
+            border: aqua solid 1px;
+        }
+        .form-oder{
+         margin-left: 30%;
+            padding-top: 2%;
+        }
+    </style>
+</head>
+<body>
+<div class="form-oder">
+
+
+<form class="R-drink" action="https://www.google.com/">
+
+        <h2>Order Form</h2>
+        <h4>What would you like to buy?</h4>
+        <select name="food-drink">
+            <option value="beer">Beer</option>
+            <option value="ancohol">Ancohol</option>
+            <option value="water">Water</option>
+        </select>
+        <h4>How many would you like to order?</h4>
+        <input type="radio" name="choose-option" value="c1">1- 10$<br>
+        <input type="radio" name="choose-option" value="c2">2- 20$<br>
+        <input type="radio" name="choose-option" value="c3">3- 25$<br>
+        <p>Name <span style="color: red">*</span></p>
+        <input type="text" placeholder="Firt Name" name="fname">
+        <input type="text" placeholder="Last Name" name="lname">
+        <p>Email</p>
+        <input type="email">
+        <p>Phone Number</p>
+        <input type = "text" name="phone1" size="5"/> -
+        <input type = "text" name="phone2" size="5"/> -
+        <input type = "text" name="phone3" size="5"/>
+        <p><input type = "submit" name="btSubmit" value="Submit"/></p>
+       <input type="reset">
+
+</form>
+</div>
+</body>
+</html>

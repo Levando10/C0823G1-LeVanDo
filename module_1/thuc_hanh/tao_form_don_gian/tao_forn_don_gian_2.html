@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>part2</title>
+    <style>
+        h3{
+            color: #1341FE;
+            background-color: #D4FDD6;
+        }
+        .table-all{
+            background-color: #FFFDA9;
+
+        }
+        label{
+            color: #3249AB;}
+
+    .button-sub{
+        background-color: #DCD9D2;
+        color: #0D0D0D;
+        padding: 4px;
+    }
+    </style>
+</head>
+<body>
+
+
+    <form>
+        <table class="table-all" cellpadding="6" cellspacing="6" >
+        <tr >
+            <td colspan="4"><h3>ĐĂNG KÝ HỌC VIÊN</h3></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+            <tr>
+               <td>
+                   <label for="name" >Họ Và Tên</label></td>
+                <td > <input id="name" type="text" name="name"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="birth">Ngày sinh</label>
+                </td>
+                <td><input id="birth" name="birth" style="width: 80px" type="date"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Giới tính</label></td>
+                <td> <input type="radio" name="name"> Nam
+                     <input type="radio" name="name"> Nữ
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label for="address">Địa chỉ</label></td>
+                <td><textarea id="address" ></textarea></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr><td>
+                <label>Lớp</label>
+            </td>
+                <td> <select  name="select-class">
+                    <option>-Chọn lớp-</option>
+                    <option>Java</option>
+                    <option>Css</option>Html</option>
+                    <option>Css</option>Javascript</option>
+                </select></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr><td><label for="email">Email</label></td>
+            <td>
+                <input id="email" style="width: 120px" type="email" name="email">
+            </td></tr>
+            <tr>
+                <td><label for="phone">Điện thoại</label></td>
+                <td><input id="phone" style="width: 120px" type="text"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr><td></td>
+            <td >
+                <input class="button-sub" type="submit" value="Đăng ký">
+                <input class="button-sub" type="reset" value="Nhập lại">
+            </td>
+                <td></td>
+                <td></td>
+                <td></td></tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
