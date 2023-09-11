@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập số A: </label><input type="number" id="numA"> <br>
+<label>Nhập só B:</label><input type="number" id="numB"> <br>
+<button onclick="calculatorAdd()">+</button>
+<button onclick="calculatorSubtraction()">-</button>
+<button onclick="calculatorMultip()">*</button>
+<button onclick="calculatorDivision()">/</button><br>
+
+<h3 style="display: inline-block">Result: </h3>
+<p style="display: inline-block" id="result"></p>
+
+
+
+  <script>
+     function calculatorAdd(){
+         a = +document.getElementById("numA").value;
+         b = +document.getElementById("numB").value;
+         document.getElementById("result").innerText = a + b;
+
+     }
+     function calculatorSubtraction(){
+         a = +document.getElementById("numA").value;
+         b = +document.getElementById("numB").value;
+         document.getElementById("result").innerText = a - b;
+
+     }
+     function calculatorMultip(){
+         a = +document.getElementById("numA").value;
+         b = +document.getElementById("numB").value;
+         document.getElementById("result").innerText = a * b;
+
+     }
+     function calculatorDivision(){
+         a = +document.getElementById("numA").value;
+         b = +document.getElementById("numB").value;
+         document.getElementById("result").innerText = a / b;
+
+     }
+  </script>
+</body>
+</html>
