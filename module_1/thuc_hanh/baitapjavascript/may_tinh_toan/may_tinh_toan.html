@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+</style>
+<body>
+<table border="1" cellspacing="4" cellpadding="4">
+    <tr>
+        <td><label>Nhập số A: </label></td>
+        <td><input type="number" id="numA"></td>
+    </tr>
+    <tr>
+        <td><label>Nhập số B:</label></td>
+        <td><input type="number" id="numB"></td>
+    </tr>
+    <tr><td><button onclick="calculatorAdd()">+</button>
+        <button onclick="calculatorSubtraction()">-</button>
+        <button onclick="calculatorMultip()">*</button>
+        <button onclick="calculatorDivision()">/</button>
+    </td>
+        <td><h3 style="display: inline-block">Result: </h3>
+            <p style="display: inline-block" id="result"></p></td></tr>
+</table>
+
+
+
+
+<script>
+    function calculatorAdd(){
+        a = +document.getElementById("numA").value;
+        b = +document.getElementById("numB").value;
+        document.getElementById("result").innerText = a + b;
+
+    }
+    function calculatorSubtraction(){
+        a = +document.getElementById("numA").value;
+        b = +document.getElementById("numB").value;
+        document.getElementById("result").innerText = a - b;
+
+    }
+    function calculatorMultip(){
+        a = +document.getElementById("numA").value;
+        b = +document.getElementById("numB").value;
+        document.getElementById("result").innerText = a * b;
+
+    }
+    function calculatorDivision(){
+        a = +document.getElementById("numA").value;
+        b = +document.getElementById("numB").value;
+        document.getElementById("result").innerText = a / b;
+
+    }
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
