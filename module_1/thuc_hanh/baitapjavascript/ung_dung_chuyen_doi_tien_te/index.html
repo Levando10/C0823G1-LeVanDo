@@ -24,12 +24,12 @@
     <tr>
         <td><input id="amount" type="number"></td>
         <td></td>
-        <td><select id="fromCurrency">
+        <td><select id="from">
             <option value="vietnam">VietNam</option>
             <option value="american">american</option>
         </select></td>
         <td></td>
-        <td><select id="toCurrency">
+        <td><select id="to">
             <option value="usd">USD</option>
             <option value="vnd">VND</option>
         </select></td>
@@ -38,34 +38,28 @@
 </table>
 <h4 style="display: inline-block">Result: </h4>
 <p style="display: inline-block" id="p-result"></p>
-
 <script>
-
-
-    function toConvert(){
+    function toConvert() {
         let amount = document.getElementById("amount").value;
-        let fromcurrency = document.getElementById("fromCurrency").value;
-        let tocurrency = document.getElementById("toCurrency").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
         let result;
-        if (fromcurrency == "vietnam" && tocurrency == "usd"){
-            result = amount / 23000;
-           document.getElementById("p-result").innerText = result + "$";
-        } else if (fromcurrency == "american" && tocurrency == "vnd"){
-            result = amount * 23000;
-            document.getElementById("p-result").innerText = result + "VND";
+        if (to === "usd"){
+            if (from === "vietnam"){
+                result = amount / 23000;
+            }else {
+                result = amount;
+            }
+            document.getElementById("p-result").innerText = result + ' $';
+        } else {
+            if (from === "american"){
+                result = amount * 23000;
+            }else {
+                result = amount;
+            }
+            document.getElementById("p-result").innerText = result + ' VND';
         }
-        else if (fromcurrency == "vietnam" && tocurrency == "vnd"){
-            result = amount;
-            document.getElementById("p-result").innerText = result + "VND";
-        }else {
-            result = amount;
-            document.getElementById("p-result").innerText = result + "$";
-        }
-
     }
-
-
-
 </script>
 </body>
 </html>

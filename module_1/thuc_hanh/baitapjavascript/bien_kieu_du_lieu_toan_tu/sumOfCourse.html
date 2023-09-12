@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><label>Score Math:</label></td>
+        <td><input id="math" type="number"> </td>
+    </tr>
+    <tr>
+        <td><label>Score physical:</label></td>
+        <td><input id="physical" type="number"></td>
+    </tr>
+    <tr>
+        <td><label>Score chemistry:</label></td>
+        <td><input id="chemistry" type="number"></td>
+    </tr>
+    <tr>
+
+        <td><button onclick="sumOfCourse()">Sum</button></td>
+        <td id="result"></td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+<script>
+    function sumOfCourse(){
+        let mathS = parseInt(document.getElementById("math").value);
+        let physcal = parseInt(document.getElementById("physical").value);
+        let chemistry = parseInt(document.getElementById("chemistry").value);
+        let result = (mathS + physcal + chemistry) / 3;
+        document.getElementById("result").innerText = result.toFixed(3);
+
+
+    }
+
+</script>
+</body>
+</html>
