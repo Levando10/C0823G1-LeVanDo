@@ -34,17 +34,14 @@
         let  result;
         if (valueOfCal === "add"){
             result = numberA + numberB;
-            document.getElementById("result").innerText = result;
         } else  if (valueOfCal === "sub"){
             result = numberA - numberB;
-            document.getElementById("result").innerText = result;
         } else  if (valueOfCal === "multi"){
             result = numberA * numberB;
-            document.getElementById("result").innerText = result;
         } else {
             result = numberA / numberB;
-            document.getElementById("result").innerText = result.toFixed(3);
         }
+        document.getElementById("result").innerText = result.toFixed(3);
     }
 </script>
 </body>
