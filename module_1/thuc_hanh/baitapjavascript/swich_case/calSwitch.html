@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  table{
+    border-collapse: collapse;
+  }
+</style>
+<body>
+<table >
+  <tr>
+    <td><label for="numA">Nhập số A: </label></td>
+    <td><input type="number" id="numA"></td>
+  </tr>
+  <tr>
+    <td><label for="numB">Nhập số B:</label></td>
+    <td><input type="number" id="numB"></td>
+  </tr>
+  <tr><td><button onclick="calculator('add')">+</button>
+    <button onclick="calculator('sub')">-</button>
+    <button onclick="calculator('multi')">*</button>
+    <button onclick="calculator('divise')">/</button>
+  </td>
+    <td><h3 style="display: inline-block">Result: </h3>
+      <p style="display: inline-block" id="result"></p></td></tr>
+</table>
+<script>
+  console.log(new Date().getUTCDay())
+  function calculator(valueOfCal){
+    let numberA = +document.getElementById("numA").value;
+    let numberB = +document.getElementById("numB").value;
+    let  result;
+    switch (valueOfCal) {
+      case 'add':
+        result = numberA + numberB;
+        break;
+      case 'sub':
+        result = numberA - numberB;
+        break;
+      case 'multi':
+        result = numberA * numberB;
+        break;
+      case 'divise':
+        result = numberA / numberB;
+        break;
+      default:
+        result = "Wrong"
+    }
+    console.log(result)
+    document.getElementById("result").innerText = result.toFixed(3);
+  }
+</script>
+</body>
+</html>

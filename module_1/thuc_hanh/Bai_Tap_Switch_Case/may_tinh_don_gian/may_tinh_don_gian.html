@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    button, input {
+        color: blue;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 4px solid black;
+    }
+
+</style>
+<body>
+
+
+<table cellpadding="8">
+    <tr>
+        <td colspan="4">
+            <label><input id="inputNum" type="text"></label></td>
+    </tr>
+    <tr>
+        <td>
+            <button id="1" onclick="numberCal('1')">1</button>
+        </td>
+        <td>
+            <button id="2" onclick="numberCal('2')">2</button>
+        </td>
+        <td>
+            <button id="3" onclick=" numberCal('3')">3</button>
+        </td>
+        <td>
+            <button onclick="numberCal('+')">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="4" onclick=" numberCal('4')">4</button>
+        </td>
+        <td>
+            <button id="5" onclick=" numberCal('5')">5</button>
+        </td>
+        <td>
+            <button id="6" onclick="numberCal('6')">6</button>
+        </td>
+        <td>
+            <button onclick="numberCal('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="7" onclick="numberCal('7')">7</button>
+        </td>
+        <td>
+            <button id="8" onclick="numberCal('8')">8</button>
+        </td>
+        <td>
+            <button id="9" onclick="numberCal('9')">9</button>
+        </td>
+        <td>
+            <button onclick="numberCal('*')">*</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="reset" onclick="resetNum()" value="C"></td>
+        <td>
+            <button onclick="numberCal('0')">0</button>
+        </td>
+        <td>
+            <button onclick="equalNum()">=</button>
+        </td>
+        <td>
+            <button onclick="numberCal('/')">/</button>
+        </td>
+    </tr>
+</table>
+<p id="demo"></p>
+<script>
+    let inputNum = "";
+
+    function numberCal(num) {
+        inputNum += num;
+        document.getElementById("inputNum").value = inputNum;
+
+    }
+
+    function equalNum() {
+        document.getElementById("inputNum").value = eval(inputNum);
+        let continueCal;
+        continueCal = eval(inputNum);
+        inputNum = continueCal;
+
+    }
+
+    function resetNum() {
+        inputNum = ""
+        document.getElementById("inputNum").value = inputNum;
+    }
+
+</script>
+</body>
+</html>

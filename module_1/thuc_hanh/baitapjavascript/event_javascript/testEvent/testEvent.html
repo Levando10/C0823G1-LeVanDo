@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="year">Nhập năm <input type="number" id="year" > <br><br></label>
+<button onclick="yearLeap()">xem Đây là năm gì</button>
+<p id="demo"></p>
+<script>
+    function yearLeap(){
+        let year = document.getElementById("year").value;
+        let result;
+        if (year % 4 === 0 && year % 100 !== 0 ){
+            result = "day la nam nhuan!";
+        } else if (year % 100 === 0 && year % 400 !== 0){
+            result = "day khong phai la nam nhuan!"
+        } else if (year % 100 === 0 && year % 400 === 0){
+            result = "day la nam nhuan!";
+        }
+       else {
+            result = "day khong phai la nam nhuan!"
+        }
+        document.getElementById("demo").innerText = result;
+    }
+</script>
+</body>
+</html>
