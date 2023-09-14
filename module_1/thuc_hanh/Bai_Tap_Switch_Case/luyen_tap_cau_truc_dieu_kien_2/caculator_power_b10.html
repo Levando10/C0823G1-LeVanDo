@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Tính Tiền Điện!!!</h1>
+<label for="numPower">Nhập giá điện của bạn sử dụng trong tháng: <input type="number" id="numPower"></label>
+<button style="background-color: blueviolet" type="button" onclick="calPowers()"> Kết quả</button>
+<h4 id="result">Số tiền bạn cần trả là: </h4>
+<script>
+    function calPowers(){
+
+        let inputPow = +document.getElementById("numPower").value;
+        let calPow;
+        if (inputPow > 0 ){
+            if (inputPow <= 50){
+                calPow = inputPow * 2;
+            } else if (inputPow <= 100){
+                calPow = 100 + (inputPow - 50) * 2.5;
+            } else if (inputPow <= 150){
+                calPow = 100 + 125 + (inputPow - 100) * 3;
+            } else if (inputPow > 150){
+                calPow =  100 + 125 + 150 + (inputPow - 150) * 3.5;
+            }
+            document.getElementById("result").innerHTML = `<h4>Số tiền bạn cần trả là : ${calPow} !!!</4>`;
+        } else {
+            calPow = "Không được nhập không hoặc số âm và kí tự đặc biệt!!!";
+            document.getElementById("result").innerHTML = `<h4>Số tiền bạn cần trả là : ${calPow}</h4>`;
+        }
+    }
+</script>
+</body>
+</html>

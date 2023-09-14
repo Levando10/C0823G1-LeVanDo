@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: blue">Tính Thuế thu nhập cá nhân!!!</h1>
+<label for="income">Nhập lương của bạn: <input id="income" ></label>
+<button type="button" onclick="calIncome()">Tính Thuế</button>
+<h4 id="result">Lương của bạn sau khi tính thuế là: </h4>
+
+<script>
+    function  calIncome(){
+        let income = +document.getElementById("income").value;
+        let result;
+        if (income > 0){
+            if (income <= 10000000){
+                result = income * 0.05;
+                income -= result;
+            } else if (income <= 18000000){
+                result = 500000 + (income - 10000000) * 0.08;
+                income -= result;
+            } else if (income <= 32000000){
+                result = 1140000 + (income - 18000000) * 0.1;
+                income -= result;
+            } else if (income <= 52000000){
+                result = 2540000 + (income - 32000000)* 0.14;
+                income -= result;
+            } else if (income > 52000000){
+                result = 5340000 + (income - 52000000)*0.16;
+                income -=result;
+            }
+            document.getElementById("result").innerHTML = `<h4>Lương của bạn sau khi tính thuế là : ${income} Vnd</h4>`;
+        }
+    }
+</script>
+</body>
+</html>

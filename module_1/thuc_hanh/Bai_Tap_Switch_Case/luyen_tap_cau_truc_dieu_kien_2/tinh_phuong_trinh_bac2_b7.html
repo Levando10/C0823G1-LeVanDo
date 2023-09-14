@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let root1, root2;
+    let a = prompt("Nhập a: ");
+    let b = prompt("Nhập b: ");
+    let c = prompt("Nhập c: ");
+    let discriminant = b * b - 4 * a * c;
+
+    if (discriminant > 0) {
+        root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        alert(`Các Nghiệm lần lượt là  ${root1} và ${root2}`);
+    } else if (discriminant === 0) {
+        root1 = root2 = -b / (2 * a);
+        alert(`Các Nghiệm lần lượt là  ${root1} và ${root2}`);
+    } else {
+        let rX = (-b / (2 * a)).toFixed(2);
+        let iP = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+        alert(
+            `Các nghiệm lần lượt là  ${rX}  ${iP} +${rX}  -${iP}`
+        );
+    }
+</script>
+</body>
+</html>

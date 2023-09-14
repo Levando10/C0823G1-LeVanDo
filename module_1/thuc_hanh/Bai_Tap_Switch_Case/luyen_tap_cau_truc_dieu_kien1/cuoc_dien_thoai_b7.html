@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    let phonePackage = +prompt("Nhập só cước điện thoại của bạn trong tháng:");
+    let result;
+    if ( phonePackage < 2 && phonePackage >= 0){
+        result = phonePackage * 1100;
+    } else if (phonePackage < 3){
+        result = (1100 + (phonePackage - 1) * 1300);
+    } else if (phonePackage < 4){
+        result = (1100 + 1300 + (phonePackage -2) * 1500);
+    } else if (phonePackage >= 4){
+        result = (1100 + 1300 + 1500 + (phonePackage - 3) * 1700);
+    } else {
+        result = "Nhập sai cú pháp";
+    }
+    alert("Số tiền cước điện thoại của bạn là : " + result + " vnd");
+
+</script>
+</body>
+</html>
