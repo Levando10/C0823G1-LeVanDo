@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ung dung Loop</title>
+</head>
+<body>
+<!--<script type="text/javascript">-->
+<!--    // var n = +prompt('Nhap gia tri N')-->
+<!--    let i, j;-->
+<!--    for (i = 1; i <= 5; i++) {-->
+<!--        for (j = 1; j <= i; j++) {-->
+<!--            if (j === 1 || j === i || i === 5) {-->
+<!--                document.write('*');-->
+<!--            } else {-->
+<!--                document.write('&nbsp; ');-->
+<!--            }-->
+<!--        }-->
+<!--        document.writeln("<br/>");-->
+<!--    }-->
+
+
+
+<script type="text/javascript">
+    var h = +prompt('Nhap chieu cao h: ');
+
+    for (var i = 1; i <= h; i++) {
+        // In khoảng trắng phía trước dấu '*' để tạo tam giác cân
+        for (var j = 1; j <= h - i; j++) {
+            document.write('&nbsp;&nbsp;');
+        }
+
+        // In dấu '*' tương ứng với hàng hiện tại
+        for (var k = 1; k <= 2 * i - 1; k++) {
+            document.write('*');
+        }
+
+        // Xuống dòng sau khi hoàn thành hàng hiện tại
+        document.writeln("<br/>");
+    }
+
+</script>
+</body>
+</html>

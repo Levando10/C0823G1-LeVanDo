@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let num = +prompt("Nhập số nguyên dương muốn tính giai thừa : ");
+    while (num < 0 || num === 0){
+        num = +prompt("vui lòng nhập số nguyên dương: ");
+    }
+    let numMulti = 1;
+    let result = num;
+    for (let i = 1; i < num; i++) {
+        numMulti *= i;
+    }
+    result *= numMulti
+    document.write(`Giai thừa của ${num} là : ${result}`)
+</script>
+</body>
+</html>

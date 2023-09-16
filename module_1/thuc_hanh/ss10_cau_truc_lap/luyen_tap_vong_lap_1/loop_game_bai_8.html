@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="gameCheck()"> Chơi game!!!</button>
+<script>
+    function gameCheck() {
+        let count = 0;
+        let numberRegion = +prompt("Bạn muốn đoán trong khoảng từ 1 đến bao nhiêu :  ");
+        let numberRandom = Math.floor(Math.random() * numberRegion + 1)
+        console.log(numberRandom)
+        let guessNum = +prompt("Nhập số đoán của bạn ");
+        do {
+
+            if (guessNum > numberRandom) {
+                guessNum = +prompt("Bạn hãy nhập số nhỏ hơn : ");
+                count++;
+            } else if (guessNum < numberRandom) {
+                guessNum = +prompt("Bạn hãy nhập số lớn hơn : ");
+                count++;
+            } else if (guessNum === numberRandom) {
+                alert("Chúc mừng bạn đã thắng!!!");
+               break;
+            }
+            if (count === 2) {
+                alert("Bạn đã thua rồi !!!");
+               let  continueGame = +confirm("Bạn có muốn chơi lại không???");
+               if (continueGame === 1){
+                   gameCheck();
+               } else {
+                   alert("Hẹn bạn vào lần sau!!!");
+                   break;
+               }
+                break;
+            }
+        } while (true)
+
+    }
+
+</script>
+
+</body>
+</html>

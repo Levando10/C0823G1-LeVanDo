@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let j;
+    let sum = 0;
+    document.write("30 số đầu tiên chia hết cho 7 là:");
+    for (j = 1; j <= 210; j++) {
+        if (j % 7 === 0) {
+            document.write(` ${j} `);
+            sum+=j;
+        }
+    }
+    document.write(" <br> Tổng của các số chia hết cho 7 là: " + sum);
+</script>
+
+</body>
+</html>

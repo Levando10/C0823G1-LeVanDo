@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table tr {
+            height: 60px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let sout;
+    sout = "<table  style='border: blue solid 3px;border-collapse: collapse;color: red;text-align: center' border='1' width='900'  >"
+    let sum;
+    for (i = 1; i <= 9; i++) {
+        sout = sout + "<tr>";
+        for (j = 2; j <= 9; j++) {
+            sum = j * i;
+            sout = sout + "<td>" + ` ${j} X ${i}  = ${sum}` + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+
+
+</script>
+</body>
+</html>

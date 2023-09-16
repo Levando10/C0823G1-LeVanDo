@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<body>
+<script>
+    let countNum = 0;
+    let count = 0;
+    let num = +prompt("Hiển thị dãy số nguyên tố từ đầu đến : ")
+    let i,j;
+    for (j = 2; true; j++) {
+        for (i = 1; i <= 20000; i++) {
+            if (j % i === 0) {
+                count++;
+            }
+        }
+
+        if (count === 2) {
+            countNum++;
+            document.write(j);
+            document.write("<br>");
+        }
+        count = 0;
+
+        if (countNum === num){
+            break
+        }
+
+    }
+
+</script>
+</body>
+</html>

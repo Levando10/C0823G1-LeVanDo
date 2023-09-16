@@ -85,15 +85,10 @@
     function numberCal(num) {
         inputNum += num;
         document.getElementById("inputNum").value = inputNum;
-
     }
 
     function equalNum() {
-        document.getElementById("inputNum").value = eval(inputNum);
-        let continueCal;
-        continueCal = eval(inputNum);
-        inputNum = continueCal;
-
+        inputNum = document.getElementById("inputNum").value = eval(inputNum);
     }
 
     function resetNum() {
