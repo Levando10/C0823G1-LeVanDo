@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="result"></p>
+<body>
+<script>
+
+    let arr1 = [1,2,3,4,5,6,7,8,9,10]
+    let arr2 = [4,5,6,1,1,1,8,11,12,19]
+    let arr3 = [7,8,9,12,32,2,6,7,8,1,11,23,12,56,12,67,78,12,11,21]
+    let result = `Mảng đầu tiên : ${arr1} <br> Mảng thứ hai : ${arr2} <br> Mảng Thứ Ba : ${arr3} <br>`;
+    let arrSum = arr1.concat(arr2).concat(arr3);
+    arr3 = arrSum
+    result += `Sau khi ghép 2 mảng thứ 1 và 2 vào 3 : ${arr3} có độ dài của mảng là : ${arr3.length}`;
+    document.getElementById("result").innerHTML = result;
+
+
+</script>
+</body>
+</html>

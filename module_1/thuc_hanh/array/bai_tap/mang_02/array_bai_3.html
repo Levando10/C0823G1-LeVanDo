@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let arr = [5, 6, 'as123', '123sa', 'he llo', 7, '', 15, 'abc123', '7863sa'];
+    let result = ``;
+    result += `Mảng : ${arr} <br>`;
+    for (let i = 0; i < arr.length; i++) {
+        if (Number.isFinite(arr[i])) {
+            count++
+        }
+    }
+    result += `số kí tự số trong mảng là : ${count}`;
+    document.write(result)
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập phần tử số nguyên V: <input type="number" id="numV"></label>
+<button onclick="checkNum()">Check</button>
+<p id="result"></p>
+<script>
+    let arr = [3, -3, -12, 5, 2, 11, -13, -7, 9, 7, -10, 23, -56];
+    let result = "";
+    function checkNum() {
+        let num = +document.getElementById("numV").value;
+        for (let i = 0 ; i < arr.length ; i++){
+            if (arr[i] === num){
+                result = `mảng trước khi xóa là : ${arr}  <br>`;
+                arr.splice(i, 1)
+                arr.push(0)
+                result += `mảng sau khi xóa V thì được : ${arr}`;
+                break;
+            }
+            result = `V is not in the array`;
+        }
+        document.getElementById("result"). innerHTML = result;
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

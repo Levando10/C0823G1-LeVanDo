@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label> Nhập số nguyên vào mảng : <input id="num" type="text"></label>
+<button onclick="addArray()">thêm vào mảng</button>
+<button onclick="displayArray()">Hiển thị mảng</button>
+<button onclick="replaceArray()">Change</button>
+<p id="result"></p>
+<script>
+    let arr = [];
+    let result = "";
+    function addArray() {
+        let num = document.getElementById("num").value;
+        arr.push(num)
+        console.log(arr);
+        document.getElementById("num").value = "";
+    }
+
+    function displayArray() {
+        document.getElementById("result").innerHTML = `Mảng gồm các phần tử  : ${arr} <br>`;
+    }
+
+    function replaceArray() {
+        result += `Mảng gồm các phần tử  : ${arr} <br>`
+        let charArr = arr.join().replace(/-/g, "_")
+        result += `Sau khi thay đổi : ${charArr}`;
+        document.getElementById("result").innerHTML = result;
+
+    }
+
+</script>
+
+</body>
+</html>

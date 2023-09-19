@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập từ: <input id="text-input" type="text"></label> <button type="submit" onclick="dictionary()">Dịch</button>
+<p id="result"></p>
+
+<script>
+
+    function dictionary() {
+        let result = ""
+        let engArr = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let vietArr = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let textInput = document.getElementById("text-input").value;
+        for (let i = 0 ; i <engArr.length ; i++){
+            if (textInput === engArr[i]){
+                result = vietArr[i];
+                break;
+            } else if (textInput !== engArr[i])
+                result = "Không tìm thấy"
+        }
+        document.getElementById("result").innerHTML = result;
+
+
+
+    }
+
+</script>
+</body>
+</html>

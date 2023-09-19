@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let arr = [31, 5, 2, 11, 14, 9, 7, 10, 23, 16];
+    let result = `Mảng trước khi sắp xếp là : ${arr} <br>`
+  arr.sort(function (a,b){
+      return a - b
+  })
+    result += `Mảng sau khi sắp xếp là : ${arr} `
+    document.getElementById("result").innerHTML = result;
+</script>
+
+</body>
+</html>

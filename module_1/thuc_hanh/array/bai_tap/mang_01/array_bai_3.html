@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [12,23,3,35,5,25,36,15,7,9];
+    let  max = arr[0];
+    let sum = 0;
+    for (let i = 0 ; i < arr.length ; i++){
+        if (arr[i] > max){
+            max = arr[i]
+        }
+        sum += arr[i];
+    }
+    sum = sum/arr.length;
+    document.write(`Giá trị lớn nhất trong mãng là ${max} giá trị trung bình của các phần tử trong mãng là ${sum}` )
+</script>
+</body>
+</html>

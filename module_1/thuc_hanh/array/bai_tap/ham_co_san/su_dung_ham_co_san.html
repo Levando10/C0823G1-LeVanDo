@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myColor = ["Red", "Green", "White", "Black"];
+    document.write(myColor.join())
+    document.write("<br><br>")
+
+    let number = [0, 2, 5, 4, 6, 8];
+    let result = [number[0]];
+    for (let i = 1; i < number.length; i++) {
+        if (number[i - 1] % 2 === 0 && number[i] % 2 === 0) {
+            result.push('-', number[i]);
+        } else {
+            result.push(number[i])
+        }
+    }
+    document.write(result.join(''))
+    document.write("<br><br>")
+    document.write("<br><br>")
+
+
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let str = "Hello Quick Brown Fox"
+    let result2 = [];
+    for (let x = 0; x < str.length; x++) {
+        if (UPPER.indexOf(str[x]) !== -1) {
+            result2.push(str[x].toLowerCase());
+        } else if (LOWER.indexOf(str[x]) !== -1) {
+            result2.push(str[x].toUpperCase());
+        } else {
+            result2.push(str[x]);
+        }
+    }
+    document.write(result2.join(''))
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="string1">Nhập chuỗi 1: <input id="string1" type="text"></label> <br>
+<label for="string2">Nhập chuỗi 2: <input id="string2" type="text"></label> <br>
+<button type="button" onclick="compareString()">Check</button>
+<p id="result"></p>
+<script>
+
+
+    function compareString(){
+        let result = "";
+        let str1 = document.getElementById("string1").value;
+        let str2 = document.getElementById("string2").value;
+        if (str1 === str2){
+            result = "2 Chuỗi bằng nhau !!!"
+
+        } else {
+            result = "2 Chuỗi không bằng nhau!!!"
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>

@@ -13,17 +13,43 @@
 <script>
     let value = +prompt("Enter a number: ");
     let numbers = [-3, 5, 1, 3, 2, 10];
-    let inndex = 0;
-   for (let i = 0 ; i <numbers.length ; i++){
-       if (value === numbers[i]){
-          inndex = i;
-       }
-   }
-   if (inndex > 0){
-       alert(`giá trị của ${value} có vị trí là ${i}`);
-   } else if (inndex === 0){
-       alert(`giá trị của ${value} không tìm thấy trong mãn`);
-   }
+    let index = -1;
+
+  for ( let i = 0 ; i < numbers.length ; i++){
+      if (value === numbers[i]){
+          index = i ;
+      }
+  }
+  if (index > -1){
+      alert(`vị trí của số ${value} trong mảng là ${index}  `)
+  } else {
+      alert(`Không tìm thấy giá trị ${value} trong mảng!!!`);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+    //  let value = +prompt("Enter a number: ");
+   //  let numbers = [-3, 5, 1, 3, 2, 10];
+   //  let inndex = 0;
+   // for (let i = 0 ; i <numbers.length ; i++){
+   //     if (value === numbers[i]){
+   //        inndex = i;
+   //     }
+   // }
+   // if (inndex > 0){
+   //     alert(`giá trị của ${value} có vị trí là ${i}`);
+   // } else if (inndex === 0){
+   //     alert(`giá trị của ${value} không tìm thấy trong mãn`);
+   // }
 
 
     // let x = [-3, 5, 1, 3, 2, 10];

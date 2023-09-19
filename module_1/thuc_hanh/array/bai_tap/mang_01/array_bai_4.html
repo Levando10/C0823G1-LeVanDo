@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label> Nhập số nguyên vào mảng : <input id="num" type="number"></label>
+<button onclick="addArray()">thêm vào mảng</button>
+<button onclick="displayArray()">Hiển thị mảng</button>
+<button onclick="reverseArray()">Đảo ngược</button>
+
+<p id="result"></p>
+<script>
+    let arr = [];
+    function addArray() {
+        let num = +document.getElementById("num").value;
+        arr.push(num)
+        console.log(arr);
+        document.getElementById("num").value = "";
+    }
+    function reverseArray() {
+        document.getElementById("result").innerHTML = `Mảng gồm các phần tử  : ${arr}  <br>
+                                                        Mảng sau khi hoán đổi là : ${arr.reverse()}`;
+        document.getElementById("num").value = "";
+        arr = [];
+    }
+    function displayArray() {
+        document.getElementById("result").innerHTML = `Mảng gồm các phần tử  : ${arr} `;
+    }
+
+</script>
+</body>
+</html>

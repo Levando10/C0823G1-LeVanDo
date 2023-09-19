@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "Le 13 Van Do 23 hehe  huhu 21s "
+    let countStr = str.split(" ");
+    let count = 0;
+    let result = `Chuỗi ban đầu : ${str} <br>`;
+    for (let i = 0 ; i < countStr.length ; i++){
+       if (isNaN(countStr[i])){
+           count++;
+       }
+    }
+    result += `Số  từ trong chuỗi ${count}`
+    document.write(result)
+</script>
+</body>
+</html>
