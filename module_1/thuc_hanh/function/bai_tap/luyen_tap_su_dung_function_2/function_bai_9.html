@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = ["a", "b", "c", "b", "b", "d", 3, "k", "b", "a","d","baby"];
+    document.write(`Mảng ban đầu : ${arr1} : <br>`);
+    let arr2 = ["b"];
+    document.write(`Kí tử : ${arr2} <br>`)
+    let countChar = checkCharArray(arr1, arr2);
+    document.write(`Số lần xuất hiện : ${countChar}`)
+
+
+
+    function checkCharArray(arrChar, char) {
+        let count = 0;
+        for (let i = 0; i < arrChar.length; i++) {
+            if (arrChar[i] === char[0]) {
+                count++
+            }
+        }
+        if (count !== 0) {
+            return count;
+        } else {
+            return -1;
+        }
+    }
+</script>
+</body>
+</html>

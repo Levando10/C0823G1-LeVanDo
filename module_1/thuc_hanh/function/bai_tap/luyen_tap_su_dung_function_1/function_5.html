@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputNamStar = prompt("Nhập vào ngôi sao: ")
+    let arrStarSame = [" Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    if (checkNameStar(inputNamStar) !== -1) {
+        document.write(`Tên  chòm sao : ` + arrStarSame[checkNameStar(inputNamStar)]);
+    } else {
+        document.write("Không tìm thấy ngôi sao!!!")
+    }
+
+    function checkNameStar(inputStar) {
+        let arrStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        for (let i = 0; i < arrStar.length; i++) {
+            if (arrStar[i] === inputStar) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+</script>
+
+</body>
+</html>

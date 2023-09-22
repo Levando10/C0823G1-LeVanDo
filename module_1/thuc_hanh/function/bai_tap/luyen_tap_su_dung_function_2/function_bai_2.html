@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let radius = +prompt("Nhập bán kính ");
+
+    function calCircle(num) {
+        let acreage = 3.14 * Math.pow(num, 2)
+        alert(`Diện tích hình tròn là : ${acreage.toFixed(3)}`)
+    }
+
+    function CalPerimeter(num) {
+        let perimeter = 2 * 3.14 * num
+        alert(`Chu vi hình tròn là : ${perimeter.toFixed(3)}`)
+    }
+
+    calCircle(radius)
+    CalPerimeter(radius)
+</script>
+</body>
+</html>

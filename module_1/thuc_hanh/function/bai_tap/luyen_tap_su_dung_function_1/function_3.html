@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let firstNum = +prompt("Nhập số đầu tiên : ");
+    let secondNum = +prompt("Nhập số thứ hai : ");
+    checkNum(firstNum, secondNum);
+
+    function checkNum(num1,num2) {
+        if (num1 > num2){
+            return alert(`Số đầu tiên ${num1} lớn hơn ${num2}`);
+        } else if ( num1 <= num2){
+            return alert(`Tổng của 2 số là : ${num1 + num2}`);
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

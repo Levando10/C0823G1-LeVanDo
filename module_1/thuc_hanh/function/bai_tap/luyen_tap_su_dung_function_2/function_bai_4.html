@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Kiểm tra số : ");
+   if (checkNum(number)) {
+       document.write(`Đây là Số !!!`)
+   } else {
+       document.write(`Đây không phải là số!!!`)
+   }
+
+    function checkNum(num){
+        if (!isNaN(num)){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+</script>
+</body>
+</html>

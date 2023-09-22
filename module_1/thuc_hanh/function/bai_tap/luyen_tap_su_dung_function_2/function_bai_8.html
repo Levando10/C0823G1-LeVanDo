@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberInArr = +prompt("Nhập vào số phần tử trong mảng : ");
+    let beforeArr = inputArr(numberInArr);
+    document.write(`Mảng trước khi sắp xếp là : ${beforeArr} <br>`)
+    console.log(beforeArr)
+    let affterArr = reverseArr(beforeArr);
+    document.write(`Mảng sau khi sắp xếp là : ${affterArr} `)
+
+
+    function inputArr(num) {
+        let arr = new Array(num);
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = prompt(`Nhập phần tử thứ ${i + 1} của mảng : `)
+        }
+        return arr
+    }
+
+    function reverseArr(arrRever) {
+        // let arr = [];
+        // for (let i = arrRever.length-1;i>=0;i--){
+        //     arr.push(arrRever[i])
+        // }
+        //     return arr;
+        for (let  i = 0 ; i < arrRever.length / 2  ; i++){
+            let swap = arrRever[arrRever.length - i -1];
+            arrRever[arrRever.length - i -1] = arrRever[i];
+            arrRever[i] = swap
+        }
+        console.log(arrRever)
+            return arrRever;
+    }
+
+
+</script>
+
+</body>
+</html>

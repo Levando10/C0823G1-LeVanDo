@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let firstNum = +prompt("Nhập số đầu tiên : ");
+    let secondNum = +prompt("Nhập số thứ hai :");
+    swapNumber(firstNum,secondNum);
+    function swapNumber(num1,num2) {
+        let swap = num2;
+        num2 = num1;
+        num1 = swap;
+        return alert(`Sau khi hoán đổi Số đầu là : ${num1}  số thứ hai : ${num2}`)
+    }
+</script>
+
+</body>
+</html>

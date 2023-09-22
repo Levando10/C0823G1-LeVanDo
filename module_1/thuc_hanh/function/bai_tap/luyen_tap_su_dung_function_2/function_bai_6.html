@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Kiểm tra số : ")
+    if (checkInteger(number)){
+        alert("Đây là số nguyên dương!!!");
+    } else {
+        alert("Đây không phải là số nguyên dương!!!");
+    }
+    function checkInteger(num){
+        if (num > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>
