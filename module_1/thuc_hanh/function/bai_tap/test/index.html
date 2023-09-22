@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<h1>Add New Product</h1>
+<input type="text" id="inputItem">
+<button onclick="addItem()">Add</button>
+<button onclick="editItem(indexEdit)" id="btn-edit" style="display: none">Edit</button>
+<h1>Display All Product</h1>
+<p id="displayAllItem"></p>
+<table>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    let arr = [];
+    let indexEdit;
+
+    function addItem() {
+        let getItem = document.getElementById("inputItem").value;
+        arr.push(getItem)
+        document.getElementById("inputItem").value = "";
+        displayItem();
+    }
+
+    function displayItem() {
+
+        let content = `<table>`
+        for (let i = 0; i < arr.length; i++) {
+            content += ` <tr>
+     <td style="padding-right: 200px">${arr[i]}</td>
+     <td><button style="padding: 4px  4px " onclick="editListItem(${i})">Edit</button></td>
+     <td> <button style="padding-left: 30px" onclick="deleteItem(${i})">Delete</button></td>
+     </tr>`
+        }
+        content += `</table>`
+        document.getElementById("displayAllItem").innerHTML = content;
+    }
+
+    function deleteItem(indexDelete) {
+        arr.splice(indexDelete, 1);
+        displayItem();
+    }
+
+    function editListItem(index) {
+        document.getElementById("inputItem").value = arr[index];
+        document.getElementById("btn-edit").style.display = "inline-block"
+        indexEdit = index;
+    }
+
+    function editItem(edit) {
+        arr[edit] = document.getElementById("inputItem").value;
+        document.getElementById("inputItem").value = ""
+        displayItem();
+    }
+</script>
+</body>
+</html>

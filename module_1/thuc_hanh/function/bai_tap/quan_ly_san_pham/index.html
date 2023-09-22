@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add New Product</h3>
+<div>
+    <label><input type="text" id="idItem"></label>
+    <button id="btn-add" onclick="addItem()">Add</button>
+    <button id="btn-edit" style="display: none" onclick="buttonEdit()">Edit</button>
+
+
+</div>
+<div>
+</div>
+<p id="allItem">
+</p>
+
+<script>
+    let arr = [];
+    let index;
+
+    function editItem(i) {
+        // document.getElementById("btn-add").style.display = "none"
+        index = i;
+        document.getElementById("idItem").value = arr[index];
+        document.getElementById("btn-edit").style.display = "inline-block";
+        console.log(arr[index]);
+
+    }
+
+    function buttonEdit() {
+        document.getElementById("btn-edit").style.display = "none";
+        arr[index] = document.getElementById("idItem").value;
+        console.log(arr)
+        document.getElementById("idItem").value = "";
+        display(arr)
+        return arr;
+    }
+
+
+    function deleteItem(index) {
+        document.getElementById("btn-edit").style.display = "none"
+        arr.splice(index, 1)
+        display(arr);
+        return arr;
+    }
+
+
+    function addItem() {
+        document.getElementById("btn-edit").style.display = "none"
+        let item = document.getElementById("idItem").value;
+        if (item === '') {
+            return;
+        }
+        arr.push(item);
+        document.getElementById("idItem").value = "";
+        display(arr);
+    }
+
+    function display(arr) {
+        let content = " <h3>Display All Product</h3><table> "
+        for (let i = 0; i < arr.length; i++) {
+            content += `
+         <tr>
+        <td style="padding-right: 200px">${arr[i]}</td>
+        <td style="padding: 4px  4px "><button onclick="editItem(${i})">edit</button></td>
+        <td style="padding-left: 30px"><button onclick="deleteItem(${i})">delete</button></td>
+    </tr>
+        `
+        }
+        content += `</table>`
+        document.getElementById("allItem").innerHTML = content;
+    }
+
+
+</script>
+</body>
+</html>
