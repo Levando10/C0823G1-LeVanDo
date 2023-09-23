@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = "zs22322sz";
+    if (checkRecursive(arr)){
+        alert("Đây là 1 chuỗi palindrome !!!")
+    } else {
+        alert("Đây không phải là chuỗi palindrome !!!")
+    }
+    function checkRecursive(arrCheck) {
+        let count = 0;
+        for (let i = 0; i < arrCheck.length / 2; i++) {
+            if (arrCheck[i] === arrCheck[arrCheck.length - i - 1]) {
+                count++
+                // console.log(arrCheck[i])
+            } else {
+                return false;
+            }
+        }
+        if (count === Math.round(arrCheck.length / 2)) {
+            return true;
+        }
+    }
+</script>
+</body>
+</html>

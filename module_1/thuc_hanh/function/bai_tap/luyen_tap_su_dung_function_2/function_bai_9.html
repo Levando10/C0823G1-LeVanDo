@@ -8,10 +8,15 @@
 <script>
     let arr1 = ["a", "b", "c", "b", "b", "d", 3, "k", "b", "a","d","baby"];
     document.write(`Mảng ban đầu : ${arr1} : <br>`);
-    let arr2 = ["b"];
+    let arr2 = ["d"];
     document.write(`Kí tử : ${arr2} <br>`)
     let countChar = checkCharArray(arr1, arr2);
-    document.write(`Số lần xuất hiện : ${countChar}`)
+    if (countChar !== -1){
+        document.write(`Số lần xuất hiện : ${countChar}`)
+    } else {
+        document.write(`không trùng!!!`)
+    }
+
 
 
 
