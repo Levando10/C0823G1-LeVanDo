@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            if (celsius < -273){
+                return alert("giá trị nhỏ nhất -273 độ")
+            }
+            this.celsius = celsius;
+        }
+
+        convertCToF() {
+            return this.celsius * (9 / 5) - 32;
+        }
+
+        convertCToKelvin() {
+            return this.celsius + 273.15;
+        }
+    }
+
+    let myCelsius = new Temperature(5)
+    let convertF = myCelsius.convertCToF()
+    let convertK = myCelsius.convertCToKelvin()
+    document.write("Convert C to F" + convertF + "<br>")
+    document.write("Convert C to K" + convertK)
+
+</script>
+<body>
+
+</body>
+</html>

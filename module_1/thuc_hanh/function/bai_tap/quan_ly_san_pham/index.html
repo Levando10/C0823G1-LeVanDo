@@ -23,16 +23,17 @@
     let index;
 
     function editItem(i) {
-        // document.getElementById("btn-add").style.display = "none"
+
+        document.getElementById("btn-add").style.display = "none"
         index = i;
         document.getElementById("idItem").value = arr[index];
         document.getElementById("btn-edit").style.display = "inline-block";
-        console.log(arr[index]);
 
     }
 
     function buttonEdit() {
         document.getElementById("btn-edit").style.display = "none";
+
         arr[index] = document.getElementById("idItem").value;
         console.log(arr)
         document.getElementById("idItem").value = "";
@@ -61,6 +62,7 @@
     }
 
     function display(arr) {
+        document.getElementById("btn-add").style.display = "inline-block"
         let content = " <h3>Display All Product</h3><table> "
         for (let i = 0; i < arr.length; i++) {
             content += `

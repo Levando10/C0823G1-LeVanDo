@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(name, power,draftMessages, receiveMessages, stageMessaged, status) {
+            this.name = name;
+            this.power = power;
+            this.draftMessages = draftMessages;
+            this.receiveMessages = receiveMessages;
+            this.stageMessaged = stageMessaged;
+            this.status = status;
+
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        showStatus() {
+            if (this.status === 0) {
+                alert(`Máy ${this.name} đang tắt!!!`)
+            } else {
+                alert(`Máy ${this.name} đang bật!!!`)
+            }
+            this.batteryDecrease();
+        }
+
+        getBattery() {
+            this.batteryDecrease();
+            return document.write("<br>" + `Số Pin còn  lại của  ${this.name} là :` + this.power + "<br>")
+        }
+
+        batteryRefill(power) {
+            this.power += power;
+            document.write(`Sạc thêm ${power} pin!!! `)
+            this.getBattery();
+        }
+
+        batteryDecrease() {
+            return this.power = --this.power;
+        }
+        getDraftMessages(){
+            return this.draftMessages;
+        }
+
+
+        //gui tin nhan
+        sendMessage(received, message) {
+            received.getReceiveMessages().push(message)
+            this.getStageMessaged().push(message)
+            this.batteryDecrease()
+        }
+
+        //Nhan tin nhan
+        getReceiveMessages() {
+            return this.receiveMessages;
+
+        }
+
+        getShowReceiveMessages() {
+            let content = `Tin nhắn tới ${this.name} gồm : `;
+            for (let i = 0; i < this.receiveMessages.length; i++) {
+                content += this.receiveMessages[i] + " ";
+            }
+            document.write('<br>' + content)
+            this.batteryDecrease();
+        }
+
+        //Tra ve tin nhan da gui
+        getStageMessaged() {
+            return this.stageMessaged;
+        }
+
+        showMessaged() {
+            let content = `Tin nhắn ${this.name} đã gửi gồm  : `
+            for (let i = 0; i < this.stageMessaged.length; i++) {
+                content += this.stageMessaged[i] + " ."
+            }
+            document.write(content)
+            this.batteryDecrease();
+        }
+
+
+    }
+
+    let iphone = new Mobile('iphone', 10,'', [], [], 0)
+    let nokia = new Mobile('nokia', 10,'', [], [], 0)
+
+    console.log(iphone.getDraftMessages())
+
+    do {
+        iphone.setStatus(1)
+        nokia.setStatus(1)
+        if (iphone.getStatus() === 0 || nokia.getStatus() === 0) {
+            alert("yêu cầu mở điện thoại!!!");
+            break;
+        }
+
+        nokia.showStatus()
+        nokia.getBattery()
+        nokia.sendMessage(iphone, "hello apple");
+        nokia.sendMessage(iphone, "iphone oi");
+        nokia.sendMessage(iphone, "chao iphone 15");
+        nokia.showMessaged()
+        nokia.getBattery()
+        nokia.batteryRefill(4)
+        iphone.getShowReceiveMessages()
+
+
+
+    } while (nokia.getStatus() === 0)
+
+
+</script>
+</body>
+</html>
