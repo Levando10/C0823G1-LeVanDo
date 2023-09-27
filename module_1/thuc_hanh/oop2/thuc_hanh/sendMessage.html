@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile{
+        constructor(id , name) {
+            this.id = id;
+            this.name = name;
+            this.message = '';
+            this.messaged = '';
+        }
+        //gui tin nhan!!!
+       sendMessage(message,phone){
+            phone.setMessage(message);
+            this.setMessaged(message);
+       }
+       setMessage(message){
+            this.message += message;
+       }
+       checkMessage(){
+            return this.message;
+       }
+
+        //tin nhan da gui!!!
+        setMessaged(message){
+            this.messaged += message;
+        }
+        checkMessaged(){
+            return this.messaged;
+        }
+
+
+    }
+    let iphone = new Mobile(1,'Iphone');
+    let nokia = new Mobile(2,'Nokia');
+    iphone.sendMessage(' message from iphone, ',nokia);
+    iphone.sendMessage(' message from apple',nokia);
+    console.log("Tin nhắn mới : "+nokia.checkMessage())
+    console.log("Tin nhắn đã gửi : "+iphone.checkMessaged())
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(name) {
+            this.name = name;
+            this.weight = 10;
+
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return document.write(`${this.weight} <br>`)
+        }
+
+        setApple(apple) {
+            this.apple = apple;
+        }
+
+        getApple() {
+            return this.apple;
+        }
+
+        decreaseWeightApple() {
+            this.weight = --this.weight
+        }
+
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return document.write(`Cân nặng của ${this.name} là : ${this.weight} <br>`)
+        }
+
+
+        eat(apple) {
+            document.write(`${this.name} ăn táo! <br> Quả táo còn: `)
+            apple.decreaseWeightApple();
+        }
+
+        say(message) {
+            document.write(`${this.name} nói : ${message} <br>`)
+        }
+
+        checkGender() {
+            if (this.getGender()) {
+                document.write(`Giới tính của ${this.name} là : Nam <br>`)
+            } else {
+                document.write(`Giới tính của ${this.name} là : Nữ <br>`)
+            }
+        }
+
+    }
+
+    let adam = new Human('Adam', true, 70)
+    let eva = new Human('Eva', false, 50)
+    let apple1 = new Apple('apple1')
+    // adam.eat(apple1);
+    adam.eat(apple1)
+    apple1.getWeight()
+    adam.getWeight()
+    document.write("<br> <br>")
+    eva.eat(apple1)
+    apple1.getWeight()
+    eva.getWeight()
+    eva.getGender()
+    eva.checkGender()
+    eva.say('Ăn no quá rồi !!!')
+    adam.say("Đừng ăn nữa hết táo đó!!!");
+
+
+
+
+
+</script>
+
+</body>
+</html>

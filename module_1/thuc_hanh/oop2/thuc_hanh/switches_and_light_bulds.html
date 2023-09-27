@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+        constructor() {
+            this.status = 'tắt';
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status
+        }
+    }
+
+    class Switch {
+        constructor(light) {
+            this.statusSwitch = false;
+            this.light = light;
+        }
+
+
+        turnOn() {
+            light.status = 'bật';
+        }
+
+        turnOff() {
+            light.status = 'tắt'
+        }
+    }
+
+    let light = new ElectricLamp();
+    let switchButton = new Switch(light);
+    for (let i = 1; i <= 10; i++) {
+        document.write(light.getStatus() + "<br>")
+        switchButton.turnOn()
+        document.write(light.getStatus() + "<br>")
+        switchButton.turnOff();
+        document.write("Lần" + i + "<br>")
+    }
+
+</script>
+</body>
+</html>

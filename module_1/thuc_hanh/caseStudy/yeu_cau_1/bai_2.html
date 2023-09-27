@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  char = prompt() ;
+    let arrCheck = ['o', 'u', 'i', 'a', 'e','O', 'U', 'I', 'A', 'E']
+
+    if ( isNaN(char)){
+        if (arrCheck.indexOf(char)!== -1){
+            alert("đây là nguyên âm")
+        } else {
+            alert("Đây là phụ âm")
+        }
+    } else {
+        alert('Đây không phải kí tự')
+    }
+
+
+
+</script>
+
+</body>
+</html>

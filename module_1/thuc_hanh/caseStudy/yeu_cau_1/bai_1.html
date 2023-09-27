@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        border: black 2px solid;
+    }
+</style>
+<body>
+<h1 style="color: blue">Tính Lương nhân viên</h1>
+<table>
+
+    <tr>
+        <td>
+            <label for="wage">Nhập lương :  </label>
+        </td>
+        <td>
+            <input type="number" id="wage">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>Tiền nhân viên nhận được là:</p>
+        </td>
+        <td>
+            <p id="result"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calWage()">Xem kết quả</button>
+        </td>
+    </tr>
+</table>
+<script>
+
+    function calWage() {
+        let inputWage = +document.getElementById("wage").value;
+        let result;
+        if (inputWage >= 15000000){
+            result = inputWage - (inputWage*20)/100
+        } else if (inputWage >= 7000000){
+            result = inputWage - (inputWage*10)/100
+        } else {
+            result = inputWage - (inputWage*5)/100
+        }
+
+        document.getElementById("result").innerHTML = result.toFixed(3) + " Vnd"
+
+    }
+
+</script>
+</body>
+</html>
