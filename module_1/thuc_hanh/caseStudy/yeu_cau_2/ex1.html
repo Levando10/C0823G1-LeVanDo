@@ -6,9 +6,10 @@
 </head>
 <body>
 <script>
-    for (let i = 1; i <= 5; i++) {
+    let height = +prompt("Nhập chiều cào của tam giác")
+    for (let i = 1; i <= height; i++) {
         for (let j = 1; j <= i; j++) {
-            if (j === 1 || j === i || i ===5){
+            if (j === 1 || j === i || i ===height){
                 document.write("*")
             }
             else {

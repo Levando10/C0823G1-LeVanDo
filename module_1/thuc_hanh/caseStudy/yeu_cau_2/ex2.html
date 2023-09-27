@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="result" style="text-align: center;color: red"></div>
+
+<script>
+    let height = +prompt("Nhập chiều cao của tam giác : ")
+    let content = ""
+    for (let i = 1; i <= height * 2 - 1; i = i + 2) {
+        for (let j = 1; j <= height * 2 - 1; j++) {
+            if (j === 1 || i === j || j < i) {
+                content += "*"
+            }
+
+        }
+        content += "<br>"
+
+    }
+    document.getElementById("result").innerHTML = content;
+
+</script>
+</body>
+</html>
