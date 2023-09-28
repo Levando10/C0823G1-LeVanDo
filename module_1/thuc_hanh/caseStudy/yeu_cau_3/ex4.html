@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let oderDrink;
+    let total = 0;
+    let chooseQuantity;
+    do {
+        oderDrink = +prompt(`Chọn loại thức uống!!!
+        1: Cafe
+        2: Cam vắt
+        3: Nước ép cà rốt
+        4: Nước ép cà chua
+        5: Nước lọc
+        6: Nước dừa
+        7: Kết thúc oder!!!`)
+        switch (oderDrink) {
+            case 1:
+                chooseQuantity = +prompt("Cafe có giá 10000 vnd vui lòng chọn số lượng : ");
+                total = total + chooseQuantity * 10000;
+                break;
+
+            case 2:
+                chooseQuantity = +prompt("Cam vắt có giá 15000 vnd vui lòng chọn số lượng : ");
+                total = total + chooseQuantity * 15000;
+                break;
+            case 3:
+                chooseQuantity = +prompt("Nước ép cà rốt có giá 15000 vnd vui lòng chọn số lượng : ");
+                total = total + chooseQuantity * 15000;
+                break;
+            case 4:
+                chooseQuantity = +prompt("Nước ép cà chua có giá 15000 vnd vui lòng chọn số lượng : ");
+                total = total + chooseQuantity * 15000;
+                break;
+            case 5:
+                chooseQuantity = +prompt("Nước lọc có giá 10000 vnd vui lòng chọn số lượng : ");
+                total = total + chooseQuantity * 10000;
+                break;
+            case 6:
+                chooseQuantity = +prompt("Nước dừa có giá 20000 vnd vui lòng chọn số lượng : ");
+                total = total + chooseQuantity * 20000;
+                break;
+            case 7:
+                break;
+            default:
+                alert("Nhập sai!!!")
+        }
+    } while (oderDrink !== 7)
+    alert(`Số tiền cần phải trả là ${total} vnd`)
+
+</script>
+</body>
+</html>
