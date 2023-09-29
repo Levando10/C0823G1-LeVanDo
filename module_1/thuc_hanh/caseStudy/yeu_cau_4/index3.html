@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = "aabcc";
+    let str2 = "adcaa";
+    checkChar(str1,str2);
+    function checkChar(string1,string2){
+        let count = 0;
+        let newArr1 = string1.split('');//[]
+        let newArr2 = string2.split('');//[]
+        for (let i = 0; i < newArr1.length; i++) {
+            for (let j = 0; j < newArr1.length; j++) {
+                if (newArr1[i] === newArr2[j]) {
+                    newArr2.splice(j, 1)
+                    count++
+                    break
+                }
+
+            }
+        }
+       return  document.write(`Số kí tự tương tự : ${count}`)
+
+    }
+
+</script>
+</body>
+</html>

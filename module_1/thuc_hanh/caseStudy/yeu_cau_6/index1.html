@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<button onclick="addStudent()">Thêm mới học viên</button>
+<button onclick="editStudent()">Sửa thông tin học viên</button>
+<button onclick="deleteStudent()">Xóa học viên</button>
+<p id="result"></p>
+
+
+<script>
+    class Student {
+        constructor(id, name, room, email, date, module) {
+            this.id = id;
+            this.name = name;
+            this.room = room;
+            this.email = email;
+            this.date = date;
+            this.module = module;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getRoom() {
+            return this.room;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getDate() {
+            return this.date;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setFullInfo(id, name, room, email, date) {
+            this.id = id;
+            this.name = name;
+            this.room = room;
+            this.email = email;
+            this.date = date;
+        }
+
+    }
+
+    function displayContent() {
+        let content = `<table border="1" style="border-collapse: collapse" cellspacing="8" cellpadding="4">
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Module</th>
+    </tr> `;
+        for (let i = 0; i < arrStd.length; i++) {
+            content += ` <tr>
+        <td>${arrStd[i].getId()}</td>
+        <td>${arrStd[i].getName()}</td>
+        <td>${arrStd[i].getRoom()}</td>
+        <td>${arrStd[i].getEmail()}</td>
+        <td>${arrStd[i].getDate()}</td>
+        <td>${arrStd[i].getModule()}</td>
+
+    </tr>`
+
+        }
+        content += `</table>`
+
+        document.getElementById("result").innerHTML = content;
+    }
+
+    let arrStd = []
+    let countId = 1
+    let idStd;
+
+    function addStudent() {
+        idStd = 'C0823G1: ' + countId;
+        // let idStd = prompt("Nhập mã học viên : ")
+        let nameStd = prompt("Nhập Đầy đủ họ tên : ")
+        let classStd = prompt("Nhập lớp của bạn : ")
+        let emailStd = prompt(" Nhập địa chỉ Email : ")
+        let dateStd = prompt(" Nhập ngày sinh : ")
+        let moduleStd = prompt(" Nhập module : ")
+        let student = new Student(idStd, nameStd, classStd, emailStd, dateStd, moduleStd)
+        arrStd.push(student)
+        countId++;
+        console.log(arrStd)
+        displayContent()
+    }
+
+    function deleteStudent() {
+        let deleteIndex = prompt("Nhập mã số sinh viên cần xóa");
+        let flag = 0;
+        // debugger
+
+        for (let i = 0; i < arrStd.length; i++) {
+            if (deleteIndex === arrStd[i].getId()) {
+                let checkDelete = confirm(`Bạn có muốn xóa sinh viên tên : ${arrStd[i].getName()} hay không!!!`);
+                if (checkDelete) {
+                    arrStd.splice(i, 1);
+                    flag = 1;
+                }
+            }
+        }
+        if (flag === 0) {
+            alert(`Khôgn tìm thấy mã số sinh viên : ${deleteIndex}`)
+        }
+        displayContent()
+    }
+
+    function editStudent() {
+        let editIndex = prompt("Nhập mã số sinh viên cần sửa : ");
+        let flag = 0;
+        for (let i = 0; i < arrStd.length; i++) {
+            if (editIndex === arrStd[i].getId()) {
+                flag = 1;
+                // let idStd = prompt("Nhập mã học viên : ")
+                let nameStd = prompt("Nhập Đầy đủ họ tên : ")
+                let classStd = prompt("Nhập lớp của bạn : ")
+                let emailStd = prompt(" Nhập địa chỉ Email : ")
+                let dateStd = prompt(" Nhập ngày sinh : ")
+                arrStd[i].setFullInfo(idStd, nameStd, classStd, emailStd, dateStd)
+                break;
+            }
+
+        }
+        if (flag === 0) {
+            alert(`Mã số sinh viên ${editIndex} không tồn tại!!!`)
+        }
+
+        displayContent();
+    }
+
+</script>
+</body>
+</html>

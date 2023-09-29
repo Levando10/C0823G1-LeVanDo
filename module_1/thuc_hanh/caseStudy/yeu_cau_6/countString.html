@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let str = "cabca"
+        let result = "";
+        let count = 0;
+        let flag = 0;
+        for (let i = 0 ; i <str.length;i++){
+            for (let j = 0 ; j < str.length;j++){
+                if (str[i] === result[j]){
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag === 0){
+                result += str[i] //cab
+                count++
+            }
+
+        }
+        console.log(count)
+    </script>
+</body>
+</html>

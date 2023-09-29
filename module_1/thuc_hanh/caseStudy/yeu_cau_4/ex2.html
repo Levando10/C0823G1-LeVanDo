@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "cabca";
+    let result = ""
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        let flag = 0;
+        for (let j = 0; j < str.length; j++) {
+            if (str[i] === result[j]) {
+                flag = 1;
+                break;
+            }
+
+        }
+
+        if (flag === 0) {
+            result += str[i];
+            count++;
+        }
+
+    }
+    alert(` Chuỗi đầu ${str} có ${count} kí tự khác nhau trong chuỗi là : ${result}`)
+
+</script>
+</body>
+</html>

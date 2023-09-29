@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sumArr = 0
+    function sum(num){
+        let sum = 0;
+        sum += num;
+        sumArr += sum;
+        return sum;
+    }
+
+       let row = +prompt("Nhập số hàng : ");
+       let col = +prompt("Nhập số cột :");
+       let myArr = new  Array(row)
+       for (let i = 0 ; i < myArr.length ; i++){
+           myArr[i] = new Array(col)
+           for (let j = 0 ; j <myArr[i].length;j++){
+               myArr[i][j] = +prompt(`Nhập vị trí của hàng ${i} cột ${j}`)
+               if (myArr[i][j] % 2 ===0){
+                   sum(myArr[i][j]);
+               }
+           }
+       }
+      alert(`Tổng của các số chẵn trong mảng là : ${sumArr}`)
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

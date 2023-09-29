@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = createArr();
+    findMinMax(arr)
+
+    function createArr() {
+        let row = +prompt("Nhập số hàng : ");
+        let col = +prompt("Nhập số cột :");
+        let myArr = new Array(row)
+        for (let i = 0; i < myArr.length; i++) {
+            myArr[i] = new Array(col)
+            for (let j = 0; j < myArr[i].length; j++) {
+                myArr[i][j] = +prompt(`Nhập vị trí của hàng ${i} cột ${j}`)
+
+            }
+        }
+        return myArr;
+    }
+
+    function findMinMax(arrCheck) {
+        let maxArr = arrCheck[0][0];
+        let minArr = arrCheck[0][0];
+        console.log(arrCheck)
+        for (let i = 1; i < arrCheck.length; i++) {
+            for (let j = 1 ; j <arrCheck[i].length ; j++){
+                if (maxArr < arrCheck[i][j]){
+                    maxArr = arrCheck[i][j]
+                }
+                if (minArr > arrCheck[i][j]){
+                    minArr = arrCheck[i][j]
+                }
+            }
+        }
+
+        return alert(` ${maxArr} ${minArr}`)
+    }
+
+</script>
+</body>
+</html>
