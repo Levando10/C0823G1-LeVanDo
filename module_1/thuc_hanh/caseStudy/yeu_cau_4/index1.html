@@ -6,10 +6,10 @@
 </head>
 <body>
 <script>
-
     main();
 
     function main() {
+        debugger
         let str = prompt("Nhập 1 chuỗi: ");
         let content = `Chuỗi ban đầu : ${str}  </br>`;
         let cleanedString = str.replace(/\s+/g, ' ');
@@ -23,6 +23,7 @@
 
 
     function covertString(arr) {
+        debugger
         let arrResult = [];
         for (let i = 0; i < arr.length; i++) {
             let word = arr[i].toLowerCase();
