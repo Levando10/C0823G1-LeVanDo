@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button onclick="addComputer()">Thêm mới máy tính</button>
+<button onclick="showComputer()">Hiện thị danh sách máy tính</button>
+<button onclick="decreasePrice()">Hiện thị giá cao - thấp</button>
+<p id="result"></p>
+<body>
+<script>
+    class Computer {
+        constructor(id, name, manufacturers, price) {
+            this.id = id;
+            this.name = name;
+            this.manufacturers = manufacturers;
+            this.price = price;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getManufacturers() {
+            return this.manufacturers;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+    }
+
+    let arrComputer = [];
+
+
+    function addComputer() {
+        let idComputer = prompt("Nhập mã máy : ");
+        let nameComputer = prompt("Nhập tên máy tính : ");
+        let manufacturersComputer = prompt("Nhập tên hãng sản xuất : ")
+        let priceComputer = +prompt("Nhập giá bán : ");
+        let computer = new Computer(idComputer, nameComputer, manufacturersComputer, priceComputer);
+        arrComputer.push(computer)
+    }
+
+    function showComputer() {
+        let content = `<table border="1" style="border-collapse: collapse">
+    <tr>
+        <th>Mã máy </th>
+        <th>Tên máy </th>
+        <th>Tên hãng sản xuất </th>
+        <th>Giá bán </th>
+    </tr>`
+        for (let i = 0; i < arrComputer.length; i++) {
+            content += `<tr>
+        <td>${arrComputer[i].getId()}</td>
+        <td>${arrComputer[i].getName()}</td>
+        <td>${arrComputer[i].getManufacturers()}</td>
+        <td>${arrComputer[i].getPrice()}</td>
+    </tr>`
+        }
+        content += `</table>`
+        document.getElementById("result").innerHTML = content;
+    }
+
+    function decreasePrice() {
+
+        for (let i = 0; i < arrComputer.length; i++) {
+
+            for (let j = 0 ; j<arrComputer.length-i-1 ;j++){
+                if (arrComputer[j].getPrice() < arrComputer[j+1].getPrice()){
+                    let temp = arrComputer[j];
+                    arrComputer[j]=arrComputer[j+1];
+                    arrComputer[j+1] = temp;
+                }
+
+            }
+            //  for (let j = 0 ; j < arrComputer.length  ;j++ ){
+            //      if (arrComputer[i].getPrice() > arrComputer[j].getPrice()){
+            //          let swap = arrComputer[i];
+            //          arrComputer[i] =arrComputer[j];
+            //          arrComputer[j] = swap;
+            //      }
+            //  }
+        }
+        showComputer()
+    }
+
+
+</script>
+
+
+</body>
+</html>

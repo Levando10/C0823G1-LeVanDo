@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(checkEqual())
+
+    function checkEqual() {
+        let arr = [4, 3, 2, 1, 4, 2, 3, 1];
+        let newArr = []
+        let flag = true;
+
+        for (let i = 0; i < arr.length; i++) {
+            let count = 0;
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    count++;
+                }
+            }
+            newArr.push(count)
+            if (newArr[0] !== count) {
+                flag = false
+            }
+        }
+        if (newArr.length === 1) {
+            flag = false;
+        }
+        return flag
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -8,10 +8,9 @@
 <script>
     createArr();
     function createArr(){
-        let row = +prompt("Nhập số hàng : ");
+        let row = +prompt("Nhập N  : ");
         let col = +prompt("Nhập số cột :");
-        let newArr = [];
-        let count = 0
+        let count = 0;
         let myArr = new  Array(row)
         for (let i = 0 ; i < myArr.length ; i++){
             myArr[i] = new Array(col)
@@ -20,12 +19,10 @@
 
                 if (checkPrime(myArr[i][j]) === true){
                     count++
-                   newArr.push(myArr[i][j])
                 }
             }
         }
-
-        return alert(`có ${count} số nguyên tố trong mảng ${newArr} `)
+        return alert(`có ${count} số nguyên tố trong mảng : ${myArr}`)
     }
 
     function checkPrime(numCheck) {

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = "aabcc"
+    let newArrS1 = s1.split('')
+    let s2 = "adcaa"
+    let newArrS2 = s2.split('')
+    let count = 0 ;
+
+    for (let i = 0; i < newArrS1.length; i++) {
+        for (let j = 0; j < newArrS2.length; j++){
+            if (newArrS1[i] === newArrS2[j]){
+                newArrS2.splice(j,1)
+                count++;
+                break;
+            }
+        }
+
+    }
+    console.log(count)
+
+</script>
+</body>
+</html>

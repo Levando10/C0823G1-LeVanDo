@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myArr = [3, 2, 4, 5, 9]
+    let result = beautifulArray(myArr);
+    if (result){
+        alert("Đẹp")
+    } else {
+        alert("Không đẹp")
+    }
+function beautifulArray(arr){
+    for (let j = 0; j < arr.length; j++) {
+        let arr = [1, 2, 3]
+        let arrLeft = arr.splice(0, j);
+        let arrRight = arr.splice(1)
+        let sumLeft = arrLeft.reduce((sum, val) => sum + val, 0);
+        let sumRight = arrRight.reduce((sum, val) => sum + val, 0);
+        if (sumLeft === sumRight){
+           return true
+        }
+    }
+    return false;
+}
+
+
+</script>
+</body>
+</html>

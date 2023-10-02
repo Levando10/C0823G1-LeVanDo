@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let newArr = [];
+    let arr = ['a', 'b', 'c', 'b', 'd', 'c', 'e', 'f'];
+    for (let i = 0; i < arr.length; i++) {
+        let count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                count++;
+            }
+
+        }
+        if (count >= 2 && newArr.indexOf(arr[i]) === -1) {
+            newArr.push(arr[i]);
+        }
+    }
+    console.log(newArr)
+
+
+
+</script>
+</body>
+</html>
