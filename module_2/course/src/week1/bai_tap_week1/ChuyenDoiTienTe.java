@@ -9,6 +9,6 @@ public class ChuyenDoiTienTe {
         double dongVn = scanner.nextDouble();
         double rate = 23000;
         double result = dongVn / rate;
-        System.out.print("Số tiền  đô là  : " + result + "$");
+        System.out.print("Số tiền  đô là  : " + result + "$ ");
     }
 }
