@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function findMinSum(N) {
+        const MOD = 1000000007;
+        let result = 0;
+        let currentNumber = 1;
+
+        for (let K = 2; K <= N; K++) {
+            result = (result + currentNumber) % MOD;
+            currentNumber = (currentNumber + K) % MOD;
+        }
+
+        return result;
+    }
+
+    // Nhập giá trị N từ người dùng
+    const N = parseInt(prompt("Nhập giá trị N (2 ≤ n ≤ 10^5):"));
+
+    // Tìm và in ra kết quả
+    if (2 <= N && N <= 100000) {
+        const minSum = findMinSum(N);
+        console.log(minSum);
+    } else {
+        console.log("Giá trị N không hợp lệ.");
+    }
+
+</script>
+</body>
+</html>

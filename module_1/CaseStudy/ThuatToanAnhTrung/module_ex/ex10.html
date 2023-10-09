@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let lengthArr = +prompt("Nhập độ dài mảng ")
+    let arrInput = [];
+    let arrSquare = []
+
+
+
+
+    for (let i = 1 ; i < 30 ; i++){
+        arrSquare.push(i  * i )
+    }
+
+    for (let i =0 ; i < lengthArr ; i++){
+        arrInput[i]  = +prompt(`Nhập phần tử thứ  ${i + 1}`)
+    }
+
+
+    console.log(checkArr())
+    function checkArr(){
+        let arrIn = [...arrInput];
+        let arrSq = [...arrSquare]
+        let resultArr = []
+        for (let i = 0 ; i < arrIn.length ; i++){
+            for (let j = 0 ; j <arrSq.length ; j++){
+                if (arrIn[i] === arrSq[j]){
+                    resultArr.push(arrIn[i])
+                }
+            }
+        }
+
+        return resultArr
+
+    }
+
+
+</script>
+
+</body>
+</html>

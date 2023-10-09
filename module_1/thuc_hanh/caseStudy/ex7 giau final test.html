@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<button onclick="addNewComputer()" >Thêm mới máy tính</button>
+<button onclick="sortListComputer()"> Sắp xếp máy tính</button>
+<p id="root"></p>
+<body>
+
+
+<script>
+    class Computer{
+        constructor(id,name,manufacturer,price) {
+            this.id = id;
+            this.name = name;
+            this.manufacturer = manufacturer;
+            this.price = price;
+        }
+        getId(){
+            return this.id;
+        }
+        getName(){
+            return this.name;
+        }
+        getManufacturer(){
+            return this.manufacturer;
+        }
+        getPrice(){
+            return this.price;
+        }
+    }
+    let arrListComputer = []
+
+
+    // thêm mới máy tính
+    function addNewComputer(){
+        let id = +prompt("Nhập id : ");
+        let name = prompt("Nhập tên máy tính : ")
+        let manufacturer = prompt("Nhập nhà sản xuất ")
+        let price = +prompt("Nhập Giá : ")
+       let computer = new Computer(id,name,manufacturer,price)
+        arrListComputer.push(computer)
+        showComputer()
+    }
+
+    // hiển thị máy tính
+    function showComputer(){
+        let content = `<table border="1" style="border-collapse: collapse" cellpadding="20" cellspacing="4">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+        Tên máy
+        </th>
+        <th>
+            Nhà sản xuất
+        </th>
+        <th>
+            Giá
+        </th>
+    </tr>`
+        for (let i = 0 ; i < arrListComputer.length ; i++){
+            content += `<tr>
+            <td>${arrListComputer[i].getId()}</td>
+            <td>${arrListComputer[i].getName()}</td>
+            <td>${arrListComputer[i].getManufacturer()}</td>
+            <td>${arrListComputer[i].getPrice()}</td>
+</tr>`
+        }
+        content +=  ` </table>`
+
+        document.getElementById("root").innerHTML = content;
+    }
+    //sap sep
+    function sortListComputer(){
+        for (let j = 0 ; j <arrListComputer.length ; j++){
+            for (let  i = 0 ; i < arrListComputer.length -1 - j;i++){
+                if (arrListComputer[i].getPrice() < arrListComputer[i + 1].getPrice()){
+                    let temp = arrListComputer[i]
+                    arrListComputer[i] = arrListComputer[i + 1]
+                    arrListComputer[i + 1] = temp
+                }
+
+            }
+        }
+        showComputer()
+    }
+</script>
+
+</body>
+</html>

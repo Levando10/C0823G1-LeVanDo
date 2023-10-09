@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "Lê Văn ĐộN";
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZĂÂÁÀẢÃẠẮẰẤẦẨẪẬÉÈẺẼẸÊẾỀỂỄỆÍÌỈĨỊÓÒỎÕỌÔỒỐỔỖỘƠỚỜỞỠỢÚÙỦŨỤƯỨỪỬỮỰÝỲỶỸỴĐ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyzăâáàảãạắằấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôồốổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵđ';
+
+    console.log(checkString(str))
+
+    function checkString(string) {
+        let countUp = 0;
+        let countLow = 0;
+        for (let i = 0; i < string.length; i++) {
+            if (UPPER.indexOf(string[i]) !== -1 && string[i] !== ' ') {
+                console.log(string[i])
+                countUp++
+            }
+            if (LOWER.indexOf(string[i]) !== -1 && string[i] !== ' ') {
+                console.log(string[i])
+                countLow++
+            }
+        }
+
+        return countLow === countUp;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [3, 5, 10]
+    let n = 10;
+    let  interest = 0;
+
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = i + 1 ; j <arr.length  ; j++){
+            if ( (arr[j] - arr[i] ) > interest && arr[i] > 0){
+                interest = arr[j] - arr[i]
+            }
+
+        }
+
+    }
+
+        console.log(n + interest)
+
+
+
+
+
+</script>
+</body>
+</html>

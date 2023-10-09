@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let number = +prompt("Nhập số cần check : ");
+    while (number > 500) {
+        number = +prompt("Nhập dưới 500 : ");
+    }
+    let myArr = checkNumber(number)
+    document.write(`Uơc của ${number} là : ${myArr} <br>`)
+    document.write(`Tổng các ước : ${sumNumber()}`)
+
+
+    function sumNumber() {
+        let arrSum = [...myArr];
+        let sum = 0;
+        for (let i = 0; i < arrSum.length; i++) {
+            sum += arrSum[i]
+        }
+        return sum
+    }
+
+
+    function checkNumber() {
+        let arrNumber = [];
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                arrNumber.push(i);
+            }
+        }
+        return arrNumber
+    }
+</script>
+</body>
+</html>

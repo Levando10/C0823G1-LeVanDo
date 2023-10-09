@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let flag = 0;
+    let number = +prompt("Nhap so luong phan tu trong mang : ")
+    let myArr = [];
+    for (let i = 0; i < number; i++) {
+        myArr[i] = +prompt(`Nhập phần tử ${i} : `);
+    }
+
+
+    let arrIn = increaseArr()
+    let arrDe = decreaseArr()
+    for (let j = 0; j < myArr.length; j++) {
+        if (myArr[j] === arrIn[j] || myArr[j] === arrDe[j]) {
+            flag = 1;
+        } else {
+            flag = 0;
+            break;
+        }
+    }
+
+    if (flag) {
+        alert("ok")
+    } else {
+        alert("No")
+    }
+
+
+    console.log(myArr)
+    console.log(arrIn)
+    console.log(arrDe)
+
+    function increaseArr() {
+        let arr = [...myArr]; // dùng để sao chép myArr vì nếu chỉ dùng arr = myArr thì là tham chiếu và làm thay đổi đến giá trị của myArr bên ngoài !!!
+        let temp;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j]
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                }
+            }
+
+        }
+        return arr;
+    }
+
+    function decreaseArr() {
+        let arr = [...myArr];
+        let temp;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    temp = arr[j]
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                }
+            }
+
+        }
+        return arr;
+    }
+
+</script>
+</body>
+</html>

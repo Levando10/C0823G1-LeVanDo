@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "objectOrientedprogramming"
+   let strArr =  str.split(' ')
+    let result = standForString(strArr).join('')
+    console.log(result)
+
+
+    function standForString(arr){
+        let newArr = [];
+        for (let i = 0 ; i < arr.length ; i++){
+            if (arr.length === 1){
+                return  alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+            }
+            let word = arr[i].toLowerCase()
+            word = word.charAt(0).toUpperCase();
+            newArr.push(word)
+        }
+        return newArr;
+    }
+
+</script>
+</body>
+</html>

@@ -6,23 +6,38 @@
 </head>
 <body>
 <script>
-    createArr();
+    let primeArr = createArr();
+    alert(`Xắp sếp tăng dân mảng nguyên tố : ${sortArr(primeArr)}`)
+    function sortArr(arr){
+        for (let  i = 0 ; i < arr.length ; i++){
+                for (let j = 0 ; j < arr.length -1 - i; j ++){
+                    if (arr[j] > arr[j + 1]){
+                        let temp = arr[j]
+                        arr[j + 1] = arr[j]
+                        arr[j] = temp;
+                    }
+                }
+        }
+        return arr;
+    }
     function createArr(){
-        let row = +prompt("Nhập N  : ");
-        let col = +prompt("Nhập số cột :");
-        let count = 0;
-        let myArr = new  Array(row)
+        let num = +prompt("Nhập số hàng : ");
+        let newArr = [];
+        let count = 0
+        let myArr = new  Array(num)
         for (let i = 0 ; i < myArr.length ; i++){
-            myArr[i] = new Array(col)
+            myArr[i] = new Array(num)
             for (let j = 0 ; j <myArr[i].length;j++){
                 myArr[i][j] = +prompt(`Nhập vị trí của hàng ${i} cột ${j}`)
 
                 if (checkPrime(myArr[i][j]) === true){
                     count++
+                    newArr.push(myArr[i][j])
                 }
             }
         }
-        return alert(`có ${count} số nguyên tố trong mảng : ${myArr}`)
+
+        return newArr;
     }
 
     function checkPrime(numCheck) {

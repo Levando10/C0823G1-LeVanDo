@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    let numSquare;
+    let number = +prompt("Nhập số phần tử trong mảng  ")
+    let numArr = [];
+    let numberElement;
+    let arrSquare = [];
+    let sum = 0;
+    let content = ``
+
+    for (let j = 0; j < number; j++) {
+        numberElement = +prompt(`Nhập phần tử ${j + 1} :`);
+        numArr.push(numberElement);
+    }
+    content += `mảng nhập gồm : ${numArr} <br>`;
+
+
+    for (let i = 1; i <= 100; i++) {
+        numSquare = i * i;
+        arrSquare[i] = numSquare;
+    }
+
+    let myArrSquare = checkSquare();
+    content += `các số chính phương gồm : ${myArrSquare} <br>`;
+    for (let i = 0; i < myArrSquare.length; i++) {
+        sum += myArrSquare[i];
+    }
+    content += `tổng các số chính phương là : ${sum}`;
+    document.write(content);
+
+    //check chinh phuong
+    function checkSquare() {
+        let arr = [...numArr];
+        let arrCheck = [...arrSquare];
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arrCheck.length; j++) {
+                if (arr[i] === arrCheck[j]) {
+                    newArr.push(arr[i]);
+                    break;
+                }
+            }
+        }
+        return newArr;
+    }
+</script>
+</body>
+</html>

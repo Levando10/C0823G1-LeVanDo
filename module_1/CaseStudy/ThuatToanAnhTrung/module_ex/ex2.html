@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [2,1,3,1,1,9]
+    let sumLeft = 0;
+    let sumRight = 0;
+    for (let i = 0 ; i <arr.length / 2 ; i++){
+            sumLeft += arr[i] * arr[i]
+    }
+    for (let j = arr.length / 2 ; j < arr.length ; j++){
+        sumRight += arr[j]
+    }
+    if (sumLeft === sumRight){
+        console.log(true)
+    } else {
+        console.log(false)
+    }
+</script>
+</body>
+</html>

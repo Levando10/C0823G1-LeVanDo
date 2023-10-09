@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let vowelChar = "AĂÂEÊIOÔƠUƯYaăâeêioôơuưy"
+    let str = "Lê Văn Độ aa uƯ"
+    console.log(checkStr(str))
+    function checkStr(string){
+        let newArr = []
+        for (let i = 0 ; i < string.length ; i++){
+            if (vowelChar.indexOf(string[i]) !== -1){
+                console.log(string[i])
+                newArr.push(string[i])
+            }
+        }
+        return newArr
+    }
+</script>
+</body>
+</html>

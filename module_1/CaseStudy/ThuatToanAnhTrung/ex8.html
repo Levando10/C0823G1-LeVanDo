@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrParent = [1,4,5,2,3,2,3,1];
+    let arrChile = [1,2,3];
+    let minCount = 100000;
+
+    for (let j = 0 ; j < arrChile.length ; j++){
+        let count = 0;
+        for (let i = 0 ; i < arrParent.length;i++){
+            if (arrParent[i] === arrChile[j]){
+                count++
+            }
+        }
+        if(minCount>count) minCount =count
+    }
+    console.log(minCount)
+
+
+
+
+</script>
+</body>
+</html>

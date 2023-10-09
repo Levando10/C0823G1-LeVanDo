@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrFibonaci = fibonaci();
+    // console.log(arrFibonaci)
+    let inputArr = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1]
+    let arrFibo = checkFibo()
+    console.log(arrFibo)
+    console.log(sortArr())
+
+
+    function sortArr(){
+        let swap;
+        let arr = [...arrFibo]
+        for (let i = 0 ; i < arr.length ; i++){
+            for (let j = 0 ; j < arr.length - 1 ;j++){
+                if (arr[j] > arr[j + 1]){
+                    swap = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1 ] = swap
+                }
+            }
+        }
+        return arr
+    }
+    function checkFibo() {
+        let arr = [...arrFibonaci]
+        let arrCheck = [...inputArr] //[1, 5, 6, 13, 9, 12, 8, 0, 5, 1]
+        let newArr = []
+        for (let i = 0; i < arrCheck.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+               if (arr[j] === arrCheck[i]){
+                   newArr.push(arrCheck[i])
+                   break
+               }
+            }
+        }
+        return newArr
+    }
+
+    function fibonaci() {
+        let newArr = [0]
+        let temp = 1;
+        let sum = 0;
+        for (let i = 0; i < 20; i++) {
+            newArr[i] = sum
+            sum = newArr[i] + temp
+            temp = newArr[i]
+        }
+        return newArr;
+    }
+
+</script>
+</body>
+</html>

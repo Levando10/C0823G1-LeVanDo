@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addPlane()">Thêm chuyến bay</button>
+<button onclick="showPlaneList()">Danh sách chuyến bay</button>
+<button onclick="deletePlane()">Xóa chuyến bay</button>
+<p id="root"></p>
+
+
+
+<script>
+    class PlaneManagement {
+        constructor(id, date, house, startPlane, endPlane) {
+            this.id = id;
+            this.date = date;
+            this.house = house;
+            this.startPlane = startPlane;
+            this.endPlane = endPlane;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        getDate() {
+            return this.date;
+        }
+
+        getHouse() {
+            return this.house;
+        }
+
+        getStart() {
+            return this.startPlane;
+        }
+
+        getEnd() {
+            return this.endPlane;
+        }
+        setId(id){
+            this.id = id;
+        }
+        setDate(date){
+            this.date = date;
+        }
+        setHouse(house){
+            this.house = house;
+        }
+        setStar(startPlane){
+            this.startPlane = startPlane;
+        }
+        setEnd(endPlane){
+            this.endPlane = endPlane;
+        }
+    }
+
+    let listPlane = []
+
+    //Tao chuyen bay
+    function addPlane() {
+        let id = prompt("Nhập mã chuyến bay ");
+        let date = prompt("Nhập ngày bay ");
+        let house = prompt("Nhập giờ bay : ");
+        let start = prompt("Nhập nơi đi : ");
+        let end = prompt("Nhập nơi đến : ");
+        let newPlane = new PlaneManagement(id, date, house, start, end);
+        listPlane.push(newPlane);
+        showPlaneList();
+    }
+
+    //Hiển thị danh sách bay
+    //Xoa chuyen bay
+    function deletePlane(){
+        console.log(listPlane)
+        let flag = true
+        let index =  prompt('Nhập mã chuyến bay cần xóa: ')
+        for (let i = 0 ; i < listPlane.length;i++){
+            if (index !== listPlane[i].getId()) {
+                flag = false;
+            }
+            if (index === listPlane[i].getId()){
+                flag = true;
+               listPlane.splice(i,1);
+               break;
+
+            }
+        }
+        showPlaneList();
+      if (flag === false){
+          alert("Không tìm thấy mã chuyến bay !!!")
+      }
+
+    }
+    //check delete
+
+    function showPlaneList() {
+        let content = `<table border="1" cellspacing="4" cellpadding="6" style="border-collapse: collapse">
+    <tr>
+        <td>Mã chuyến bay</td>
+        <td>Ngày bay</td>
+        <td>Giờ bay</td>
+        <td>Nơi đi</td>
+        <td>Nơi đến</td>
+    </tr>`
+        for (let i = 0; i < listPlane.length; i++) {
+            content += `<tr>
+                <td>${listPlane[i].getId()}</td>
+                <td>${listPlane[i].getDate()}</td>
+                <td>${listPlane[i].getHouse()}</td>
+                <td>${listPlane[i].getStart()}</td>
+                <td>${listPlane[i].getEnd()}</td>
+                       </tr>`
+        }
+        content += `</table>`
+    document.getElementById("root").innerHTML = content;
+    }
+</script>
+</body>
+</html>

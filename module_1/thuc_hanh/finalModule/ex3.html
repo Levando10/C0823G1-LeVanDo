@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myArr = [4, 23, 35, 9];
+    // let myArr = [1, 4, 13, 25];
+    let result = checkOldNumber(myArr);
+    document.write(`Trong mảng : ${myArr} <br> phần tử có chữ số đầu tiên là số lẻ là ${result[0]} kí tự là : ${result[1]}`);
+    function checkOldNumber(){
+        let arr = [...myArr];
+        let result = 0;
+        let charResult = 0;
+        let arrResult = [];
+        for (let i = 0 ; i <arr.length ; i++){
+            let strNumber = arr[i].toString();
+            if (strNumber.charAt(0) % 2 === 1){
+                result = arr[i];
+                charResult = strNumber.charAt(0);
+                arrResult.push(charResult,result);
+                break;
+            }
+        }
+     return arrResult;
+    }
+
+</script>
+</body>
+</html>

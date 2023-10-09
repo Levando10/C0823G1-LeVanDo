@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Danh sách quản lý máy tính </h2>
+<button onclick="addProuct()">Thêm máy tính</button>
+<button onclick="arrangPrice()">Xắp xếp giá</button>
+<div id="root"></div>
+
+<script>
+    class Computer {
+        constructor(code, name, branch, price) {
+            this.code = code;
+            this.name = name;
+            this.branch = branch;
+            this.price = price;
+        }
+
+        getCode() {
+            return this.code
+        }
+
+        setCode(code) {
+            this.code = code
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getBranch() {
+            return this.branch
+        }
+
+        setCode(branch) {
+            this.branch = branch
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setName(price) {
+            this.price = price
+        }
+    }
+
+    let computer = new Computer("HX1", "Dev", "Samsung", "1000000")
+    let computer1 = new Computer("HX1", "Dev", "Samsung", "10000")
+
+    let computers = []
+    computers.push(computer)
+    computers.push(computer1)
+    function displayListComputer() {
+        let container = `<table cellpadding="10" border="1px">
+    <tr>
+    <th>Mã máy</th>
+    <th>Tên máy</th>
+    <th>Tên hãng sản xuất</th>
+    <th>Giá bán</th>
+    </tr>`
+        for (let i = 0; i < computers.length; i++) {
+            container += `<tr>
+    <td>${computers[i].getCode()}</td>
+    <td>${computers[i].getName()}</td>
+    <td>${computers[i].getBranch()}</td>
+    <td>${computers[i].getPrice() + `.VND`}</td>
+    </tr>`
+        }
+        container +=    `</table>`
+        document.getElementById('root').innerHTML = container
+    }
+
+    displayListComputer()
+
+    // Thêm
+    function addProuct() {
+        let infor = confirm("Bạn có muốn thêm sản phẩm không")
+        if (infor){
+            let id = prompt("Nhập mã máy")
+            let name = prompt("Nhập tên máy")
+            let branch = prompt("Nhập hãng máy")
+            let price = +prompt("Nhập giá máy")
+            let newProduct = new Computer(id, name, branch, price)
+            computers.push(newProduct)
+        }
+        displayListComputer()
+    }
+
+    function arrangPrice() {
+        for (let i = 0 ; i <computers.length;i++){
+            for (let j = 0 ; j<computers.length-i-1 ;j++){
+                if (computers[j].getPrice() < computers[j+1].getPrice()){
+                    let temp = computers[j];
+                    computers[j]=computers[j+1];
+                    computers[j+1] = temp;
+                }
+
+            }
+        }
+        displayListComputer()
+    }
+
+    // function arrangPrice() {
+    //     let priceProduct = computers[0]
+    //     // console.log(priceProduct)
+    //     console.log(computers[1].getPrice())
+    //     console.log(priceProduct.getPrice())
+    //     for (let i = 1; i < computers.length; i++) {
+    //         if (priceProduct.getPrice() > computers[i].getPrice()){
+    //             let temp = computers [i]
+    //             computers[i] = priceProduct
+    //             priceProduct = temp
+    //         }
+    //     }
+    //     displayListComputer()
+    // }
+</script>
+</body>
+</html>
